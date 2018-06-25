@@ -35,9 +35,9 @@
   <script src="/public/js/init.js" type="text/javascript" language="javascript"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/all.css?1525334453250289470">
+  <link rel="stylesheet" href="/public/css/all.css?1529908615533268600">
   <!--[if lt IE 9]>
-  <link rel="stylesheet" href="/public/css/forkme.ie.css?1525334453250289470">
+  <link rel="stylesheet" href="/public/css/forkme.ie.css?1529908615533268600">
   <![endif]-->
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
@@ -234,8 +234,9 @@ there’s no way to cancel it.</p>
 
 <h2 id="schedule-with-a-delay">Schedule with a Delay</h2>
 
-<p>To execute a <code class="highlighter-rouge">Runnable</code> with a given delay, let’s
-say for example 5 seconds:</p>
+<p>Hello, world!To execute a <code class="highlighter-rouge">Runnable</code> with a given delay, let’s</p>
+
+<p>say for example 5 seconds:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">java.util.concurrent.TimeUnit</span>
 
@@ -433,6 +434,7 @@ actually execute the tasks and on top of an existing
 Java <code class="highlighter-rouge">ScheduledExecutorService</code> that will be in charge of
 scheduling delayed executions, but that won’t run the tasks
 themselves. There are multiple overloads available, but lets do
+Fixed delay task
 the most general:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">java.util.concurrent.Executors</span>
@@ -632,8 +634,7 @@ to use for waiting:</p>
 <p>We can now further inspect the state of our <code class="highlighter-rouge">SchedulerService</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">io</span><span class="o">.</span><span class="n">isTerminated</span>
-<span class="c1">// Fixed delay task
-// res65: Boolean = true
+<span class="c1">// res65: Boolean = true
 </span></code></pre></div></div>
 
 
