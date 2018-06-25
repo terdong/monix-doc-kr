@@ -35,9 +35,9 @@
   <script src="/monix-doc-kr/public/js/init.js" type="text/javascript" language="javascript"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/monix-doc-kr/public/css/all.css?1529915884269413400">
+  <link rel="stylesheet" href="/monix-doc-kr/public/css/all.css?1529916931766311100">
   <!--[if lt IE 9]>
-  <link rel="stylesheet" href="/monix-doc-kr/public/css/forkme.ie.css?1529915884269413400">
+  <link rel="stylesheet" href="/monix-doc-kr/public/css/forkme.ie.css?1529916931766311100">
   <![endif]-->
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
@@ -108,22 +108,22 @@
 
   <nav role="navigation" id="toc"></nav>
 
-  <h2 id="introduction">Introduction</h2>
+  <h2 id="도입">도입</h2>
 
-<p>Task is a data type for controlling possibly lazy &amp; asynchronous
-computations, useful for controlling side-effects, avoiding
-nondeterminism and callback-hell.
-테스크는 지연 및 비동기적인 계산을 제어하기 위한 데이터 타입이며, 부작용을 제어하고 비결정주의 및 콜백지옥을 피하는데 유용합니다.</p>
+<p>테스크는 지연 및 비동기적인 계산을 제어하기 위한 데이터 타입이며, 부작용을 제어하고 비결정주의 및 콜백지옥을 피하는데 유용합니다.</p>
 
-<p>To get the imports out of the way:</p>
+<p>임포트 하려면:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// In order to evaluate tasks, we'll need a Scheduler
+// task들을 사용하기 위해서는 Scheduler가 필요합니다.
 </span><span class="k">import</span> <span class="nn">monix.execution.Scheduler.Implicits.global</span>
 
 <span class="c1">// A Future type that is also Cancelable
+// 취소 가능한 Future 타입의 한 종류
 </span><span class="k">import</span> <span class="nn">monix.execution.CancelableFuture</span>
 
 <span class="c1">// Task is in monix.eval
+// monix.eval 안에 속한 Task
 </span><span class="k">import</span> <span class="nn">monix.eval.Task</span>
 <span class="k">import</span> <span class="nn">scala.util.</span><span class="o">{</span><span class="nc">Success</span><span class="o">,</span> <span class="nc">Failure</span><span class="o">}</span>
 </code></pre></div></div>
