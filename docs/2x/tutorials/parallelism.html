@@ -15,16 +15,16 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@monix" />  
-  <meta name="twitter:image" content="https://terdong.github.io/public/images/monix-logo-rect.png" />
+  <meta name="twitter:image" content="https://terdong.github.io/monix-doc-kr/public/images/monix-logo-rect.png" />
   <meta name="twitter:title" content="Parallel Processing &mdash; Monix" />
   <meta name="twitter:description" content="Recipes for achieving parallelism" />
 
   <!-- Facebook Open-Graph -->
-  <meta property="og:url" content="https://terdong.github.io/docs/2x/tutorials/parallelism" />
+  <meta property="og:url" content="https://terdong.github.io/monix-doc-kr/docs/2x/tutorials/parallelism" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Parallel Processing &mdash; Monix" />
   <meta property="og:description" content="Recipes for achieving parallelism" />
-  <meta property="og:image" content="https://terdong.github.io/public/images/monix-logo.png" />
+  <meta property="og:image" content="https://terdong.github.io/monix-doc-kr/public/images/monix-logo.png" />
 
   <!-- Google authorship -->
   <link href="https://aboutme.google.com/b/114636882626291639915/" rel="publisher">
@@ -35,9 +35,9 @@
   <script src="/monix-doc-kr/public/js/init.js" type="text/javascript" language="javascript"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/monix-doc-kr/public/css/all.css?1529913634171477300">
+  <link rel="stylesheet" href="/monix-doc-kr/public/css/all.css?1529914761491483000">
   <!--[if lt IE 9]>
-  <link rel="stylesheet" href="/monix-doc-kr/public/css/forkme.ie.css?1529913634171477300">
+  <link rel="stylesheet" href="/monix-doc-kr/public/css/forkme.ie.css?1529914761491483000">
   <![endif]-->
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
@@ -110,7 +110,7 @@
   <div id="version2x">
     You are viewing the documentation for the older Monix 2.x series.<br />
     If you're looking for the latest 3.x
-    <a href="/docs/3x/">click here</a>!
+    <a href="./docs/3x/">click here</a>!
   </div>
 
   <nav role="navigation" id="toc"></nav>
@@ -135,14 +135,14 @@
 <h3 id="the-naive-way">The Naive Way</h3>
 
 <p>The following example uses
-<a href="/api/2.3/monix/eval/Task$.html#gather[A,M[X]&lt;:TraversableOnce[X]](in:M[monix.eval.Task[A]])(implicitcbf:scala.collection.generic.CanBuildFrom[M[monix.eval.Task[A]],A,M[A]]):monix.eval.Task[M[A]]">Task.gather</a>,
+<a href="./api/2.3/monix/eval/Task$.html#gather[A,M[X]&lt;:TraversableOnce[X]](in:M[monix.eval.Task[A]])(implicitcbf:scala.collection.generic.CanBuildFrom[M[monix.eval.Task[A]],A,M[A]]):monix.eval.Task[M[A]]">Task.gather</a>,
 which does parallel processing while preserving result ordering, 
 but in order to ensure that parallel processing actually happens,
 the tasks need to be effectively asynchronous, which for simple
 functions need to fork threads, hence the usage of 
-<a href="/api/2.3/monix/eval/Task$.html#apply[A](f:=&gt;A):monix.eval.Task[A]">Task.apply</a>,
+<a href="./api/2.3/monix/eval/Task$.html#apply[A](f:=&gt;A):monix.eval.Task[A]">Task.apply</a>,
 although remember that you can apply 
-<a href="/api/2.3/monix/eval/Task$.html#fork[A](fa:monix.eval.Task[A]):monix.eval.Task[A]">Task.fork</a>
+<a href="./api/2.3/monix/eval/Task$.html#fork[A](fa:monix.eval.Task[A]):monix.eval.Task[A]">Task.fork</a>
 to any task.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">items</span> <span class="k">=</span> <span class="mi">0</span> <span class="n">until</span> <span class="mi">1000</span>
@@ -158,7 +158,7 @@ to any task.</p>
 </span></code></pre></div></div>
 
 <p>If ordering of results does not matter, you can also use 
-<a href="/api/2.3/monix/eval/Task$.html#gatherUnordered[A](in:TraversableOnce[monix.eval.Task[A]]):monix.eval.Task[List[A]]">Task.gatherUnordered</a>
+<a href="./api/2.3/monix/eval/Task$.html#gatherUnordered[A](in:TraversableOnce[monix.eval.Task[A]]):monix.eval.Task[List[A]]">Task.gatherUnordered</a>
 instead of <code class="highlighter-rouge">gather</code>, which might yield better results, given its non-blocking execution.</p>
 
 <h3 id="imposing-a-parallelism-limit">Imposing a Parallelism Limit</h3>
@@ -223,16 +223,16 @@ in batches:</p>
 </span></code></pre></div></div>
 
 <p>Note the use of 
-<a href="/api/2.3/monix/reactive/Observable.html#bufferIntrospective(maxSize:Int):Self[List[A]]">bufferIntrospective</a>,
+<a href="./api/2.3/monix/reactive/Observable.html#bufferIntrospective(maxSize:Int):Self[List[A]]">bufferIntrospective</a>,
 which buffers incoming events while the downstream is busy, after which
 it emits the buffer as a single bundle. The
-<a href="/api/2.3/monix/reactive/Observable.html#bufferTumbling(count:Int):Self[Seq[A]]">bufferTumbling</a>
+<a href="./api/2.3/monix/reactive/Observable.html#bufferTumbling(count:Int):Self[Seq[A]]">bufferTumbling</a>
 operator can be a more deterministic alternative.</p>
 
 <h2 id="observablemapasync">Observable.mapAsync</h2>
 
 <p>Another way to achieve parallelism is to use the 
-<a href="/api/2.3/monix/reactive/Observable.html#mapAsync[B](parallelism:Int)(f:A=&gt;monix.eval.Task[B]):Self[B]">Observable.mapAsync</a>
+<a href="./api/2.3/monix/reactive/Observable.html#mapAsync[B](parallelism:Int)(f:A=&gt;monix.eval.Task[B]):Self[B]">Observable.mapAsync</a>
 operator:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="n">source</span> <span class="k">=</span> <span class="nc">Observable</span><span class="o">.</span><span class="n">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1000</span><span class="o">)</span>
