@@ -10,10 +10,9 @@ tut:
     - io.monix::monix-reactive:version3x
 ---
 
-Let's do instant gratification stuff.
+자, 바로 해봅시다.
 
-First, we need a [Scheduler]({{ site.api3x }}monix/execution/Scheduler.html)
-whenever asynchronous execution happens.
+첫째로, 비동기 실행이 발생할 때마다 [Scheduler]({{ site.api3x }}monix/execution/Scheduler.html)가 필요합니다.
 
 ```tut:silent
 // We need a scheduler whenever asynchronous
