@@ -7,34 +7,34 @@ Asynchronous Programming for Scala and [Scala.js](http://www.scala-js.org/).
 
 {% include github-stars.html %}
 
+### Monix 한글문서
+
+번역: <terdong@gmail.com>
+
+- 이 사이트는 제가 공부용으로 개설했습니다. 혹시 문제가 생길 시 메일주세요.(This website has been opened for study purposes. but please email me if it has any problems.)
+- 번역이 많이 미숙합니다. 번역이 잘못된 부분이 있다면 메일 주시면 감사하겠습니다.([원본 사이트](https://monix.io))
+- 주요 프로그래밍 명사나 단어들은 원어 그대로 사용했습니다.
+- 중간에 제 첨언이 들어간 부분도 있습니다.(*이텔릭으로 구분*)
+
 ## Overview
 
-Monix is a high-performance Scala / Scala.js library for composing asynchronous,
-event-based programs.
+Monix는 비동기적 구조, 이벤트 기반 프로그래밍을 위한 고효율 Scala / Scala.js 라이브러리입니다.
 
-It started as a proper implementation of [ReactiveX](http://reactivex.io/), 
-with stronger functional programming influences and designed from the ground up 
-for  back-pressure and made to cleanly interact with Scala's standard library, 
-compatible out-of-the-box with the [Reactive Streams](http://www.reactive-streams.org/) 
-protocol. It then expanded to include abstractions for suspending side effects 
-and for resource handling, being one of the parents and implementors of
-[cats-effect](https://typelevel.org/cats-effect/).
+Monix는 [ReactiveX](http://reactivex.io/)의 기능을 보다 잘 구현 한 것으로 시작하여 강력한 
+첫 시작은 잘 만들어진 로 부터 시작되었습니다.
+
+Monix는 더 강력한 함수형 프로그래밍 영향과 back-pressure(배압)를 위해 처음부터 다시 디자인되고, 스칼라 표준 라이브러리와 깔끔하게 상호 작용하도록 만들어졌으며, [Reactive Streams](http://www.reactive-streams.org/) 프로토콜과는 격이다르게 호환이 되는 상태로 [ReactiveX](http://reactivex.io/)를 적절히 구현하기 위해 시작되었습니다.
 
 <a href="https://typelevel.org/"><img src="{{ site.baseurl }}public/images/typelevel.png" width="150" style="float:right;" align="right" /></a>
 
-A [Typelevel project](http://typelevel.org/projects/), Monix proudly 
-exemplifies pure, typeful, functional programming in Scala, while making no
-compromise on performance.
+[Typelevel project](http://typelevel.org/projects/)인 Monix는 자랑스럽게도 스칼라에서 순수하고, 타입형이며, 함수형 프로그래밍의 좋은 예입니다. 반면에 성능면에서도 전혀 꿀리지 않습니다.
 
-Highlights:
+두드러지는 점:
 
-- exposes the kick-ass `Observable`, `Iterant`, `Task` and `Coeval` data types,
-  along with all the support they need
-- modular, only use what you need
-- designed for true asynchronicity, running on both the
-  JVM and [Scala.js](http://scala-js.org)
-- really good test coverage, code quality and API documentation 
-  as a primary project policy
+- 필요한 모든 지원들과 더불어 강력한 `Observable`, `Iterant`, `Task` and `Coeval`의 데이터 타입들을 보여줌
+- 필요한 모듈만 사용가능
+- JVM과 [Scala.js](http://scala-js.org) 양쪽에서 구동되고, 진정한 비동기성을 위해 설계됨
+- 진짜 좋은 테스트 적용범위, 코드 퀄리티 그리고 API 문서
 
 ### Presentations
 

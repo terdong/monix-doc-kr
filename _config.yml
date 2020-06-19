@@ -7,8 +7,8 @@ highlighter:      rouge
 title:            Monix
 tagline:          'Asynchronous Programming for Scala & Scala.js'
 description:      'Scala/Scala.js library for composing asynchronous, event-based programs.'
-url:              https://monix.io
-baseurl:          /
+url:              https://terdong.github.io/monix-doc-kr
+baseurl:          /monix-doc-kr/
 
 exclude:
   ["README.md", "deploy.sh", "vendor", "src", "project/", "build.sbt", "docs-raw",   "_tut", "target", "scripts"]
@@ -31,13 +31,13 @@ scalajs_full_version: 0.6.21
 scalajs_pack_version: sjs0.6
 
 # Last API path with which _tut gets generated
-api1x:            /api/1.2/
-api2x:            /api/2.3/
-api3x:            /api/3.0/
+api1x:            /monix-doc-kr/api/1.2/
+api2x:            /monix-doc-kr/api/2.3/
+api3x:            /monix-doc-kr/api/3.0/
 apiJava:          https://docs.oracle.com/javase/8/docs/api/
 
-docs2x:           /docs/2x/
-docs3x:           /docs/3x/
+docs2x:           /monix-doc-kr/docs/2x/
+docs3x:           /monix-doc-kr/docs/3x/
 
 github:
   repo:           https://github.com/monix/monix
